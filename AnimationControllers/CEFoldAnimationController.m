@@ -116,6 +116,11 @@
         // restore the to- and from- to the initial location
         toView.frame = containerView.bounds;
         fromView.frame = containerView.bounds;
+
+        fromView.layer.transform = CATransform3DIdentity;
+        toView.layer.transform = CATransform3DIdentity;
+        [containerView.layer setSublayerTransform:CATransform3DIdentity];
+
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 

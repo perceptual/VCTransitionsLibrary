@@ -59,6 +59,10 @@
                                                                     toView.layer.transform =  [self rotate:0.0];
                                                                 }];
                               } completion:^(BOOL finished) {
+                                  fromView.layer.transform = CATransform3DIdentity;
+                                  toView.layer.transform = CATransform3DIdentity;
+                                  [containerView.layer setSublayerTransform:CATransform3DIdentity];
+
                                   [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                               }];
 
